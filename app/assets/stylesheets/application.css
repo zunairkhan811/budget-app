@@ -21,9 +21,15 @@
     --white-color: #fff;
 
 }
+
 @font-face {
     font-family: 'Proxima Nova-Bold';
     src: url('../fonts/proxima_nova_bold.ttf') format('ttf');
+}
+
+body{
+    font-family: 'Proxima Nova-Bold', sans-serif !important;
+    background-color: whitesmoke !important;
 }
  .navbar{
     background-color: var(--main-color)  !important;
@@ -51,5 +57,13 @@
     height: 5px;
     background-color: var(--white-color); 
     border-radius: 50%;
-    /* margin-top: 5px; */
+  }
+
+  .gift-heading{
+    color: var(--text-color) !important;
+  }
+
+  .gift-amount{
+    color: var(--text-color) !important;
+    font-weight: bold;
   }

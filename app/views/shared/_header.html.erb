@@ -1,20 +1,33 @@
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
+    <% if user_signed_in? %>
+      <div class="row w-100">
+        <div class="col d-flex justify-content-center">
+          <a class="navbar-brand" href="javascript:void(0)">Restaurants</a>
+        </div>
+        <div class="col-auto d-flex align-items-center">
+          <a href="/users/sign_out" class="nav-icon" data-method="delete">
+            <i class="fa fa-power-off" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="row w-100 mt-4">
+        <div class="most-recent col-lg-12 d-flex flex-column align-items-center">
+          <p>Most Recent</p>
+          <span class="dot"></span>
+        </div>   
+      </div>
+    <% else %>
     <div class="row w-100">
       <div class="col d-flex justify-content-center">
         <a class="navbar-brand" href="javascript:void(0)">Restaurants</a>
       </div>
-      <div class="col-auto d-flex align-items-center">
-        <a href="/users/sign_out" class="nav-icon" data-method="delete">
-          <i class="fa fa-power-off" aria-hidden="true"></i>
-        </a>
-      </div>
     </div>
-    <div class="row w-100 mt-4">
-      <div class="most-recent col-lg-12 d-flex flex-column align-items-center">
-        <p>Most Recent</p>
-        <span class="dot"></span>
-      </div>   
-    </div>
+    <% end %>
   </div>
 </nav>
+<div class="alert alert-light d-flex justify-content-between" role="alert">
+  <p class="mb-0 gift-heading">Gift Credit</p>
+  <p class="mb-0 gift-amount">$45.00</p>
+</div>
+
