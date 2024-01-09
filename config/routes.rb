@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   resources :users
+  resources :groups
   root "groups#index"
   get "up" => "rails/health#show", as: :rails_health_check
 end

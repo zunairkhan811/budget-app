@@ -29,8 +29,9 @@
 
 body{
     font-family: 'Proxima Nova-Bold', sans-serif !important;
-    background-color: whitesmoke !important;
+    background-color: whitesmoke !important; 
 }
+
  .navbar{
     background-color: var(--main-color)  !important;
  }
@@ -66,4 +67,24 @@ body{
   .gift-amount{
     color: var(--text-color) !important;
     font-weight: bold;
+  }
+
+  .my-footer{
+    position: fixed !important;
+    bottom: 0 !important;
+    background-color: var(--second-color) !important;
+    height: 100px !important;
+  }
+
+  .my-footer .card{
+    width: 90% !important;
+    background-color: var(--second-color) !important;
+    border-color: var(--white-color) !important;
+  }
+
+  .add-restaurant-btn{
+    color: var(--white-color) !important;
+    text-decoration: none !important;
+    font-size: 20px;
+    font-weight: 100;
   }
