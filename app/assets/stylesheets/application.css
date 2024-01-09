@@ -88,3 +88,49 @@ body{
     font-size: 20px;
     font-weight: 100;
   }
+
+  .restaurant-card-container{
+    padding: 20px !important;
+    padding-bottom: 170px !important;
+  }
+
+  .square-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .square-image {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    margin-left: 10px !important;
+  }
+
+  .square-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .restaurant-card-right{
+    padding-left: 0px !important;
+  }
+
+  .restaurant-title-container{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-title{
+    color: var(--text-color) !important;
+  }
+
+  .restaurant-title-container p{
+    font-weight: bold;
+    color: var(--text-color) !important;
+  }
+
+  .card-text .text-body-secondary{
+    color: var(--text-color) !important;
+  }
+
