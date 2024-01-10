@@ -1,14 +1,18 @@
 class GroupsController < ApplicationController
-
+  before_action :set_group, only: [:show]
   def index
     @groups = Group.all
     date
+    # sum_of_amount_for_group
   end
   def new
     @group = Group.new
   end
   def show
     @group = Group.find(params[:id])
+    @foods = @group.foods
+    date
+    sum_of_amount_for_group
   end
   def create
     puts "Current user ID: #{current_user.id}"
@@ -26,6 +30,14 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:name, :icon)
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
+  end
+
+  def sum_of_amount_for_group
+    @sum_of_amount = @group.foods.sum(:amount)
   end
 
   def date

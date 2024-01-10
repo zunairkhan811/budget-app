@@ -26,10 +26,13 @@
     font-family: 'Proxima Nova-Bold';
     src: url('../fonts/proxima_nova_bold.ttf') format('ttf');
 }
+*{
+    text-decoration: none !important;
+}
 
 body{
     font-family: 'Proxima Nova-Bold', sans-serif !important;
-    background-color: whitesmoke !important; 
+    background-color: whitesmoke !important;    
 }
 
  .navbar{
@@ -132,5 +135,17 @@ body{
 
   .card-text .text-body-secondary{
     color: var(--text-color) !important;
+  }
+
+  .food-container{
+    display: flex !important;
+    justify-content: space-between !important;
+    background-color: #ebf7c8 !important;
+  }
+
+  .food-container p{
+    color: var(--text-color) !important;
+    font-weight: bold;
+    margin-bottom: 0 !important;
   }
 
