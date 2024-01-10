@@ -72,6 +72,34 @@ body{
     font-weight: bold;
   }
 
+  .a-class{
+    width: 10% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .left-arrow-container span{
+    color: var(--white-color) !important;
+    font-size: 22px !important;
+    font-weight: lighter;
+    margin-left: 30px;
+    margin-right: 10px;
+  }
+
+  .left-arrow-container span:hover{
+    color: var(--second-color) !important;
+  }
+
+  .details-container{
+    width: 90% !important;
+  }
+
+  .details-container a{
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
   .my-footer{
     position: fixed !important;
     bottom: 0 !important;

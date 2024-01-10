@@ -1,3 +1,4 @@
+<% if controller_name == 'groups' && action_name == 'index' %>
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <% if user_signed_in? %>
@@ -30,4 +31,57 @@
   <p class="mb-0 gift-heading">Gift Credit</p>
   <p class="mb-0 gift-amount">$45.00</p>
 </div>
+<% elsif controller_name == 'groups' && action_name == 'show' %>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <% if user_signed_in? %>
+      <div class="row w-100">
+        <a class="a-class" href="<%= groups_path %>">
+          <div class="left-arrow-container d-flex align-items-center">
+            <span><i class="fas fa-arrow-left"></i></span>
+          </div>
+        </a>
+        <div class="details-container d-flex justify-content-center">
+          <a class="navbar-brand" href="javascript:void(0)">Details</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</nav>
+<% elsif controller_name == 'groups' && action_name == 'new' %>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <% if user_signed_in? %>
+      <div class="row w-100">
+        <a class="a-class" href="<%= groups_path %>">
+          <div class="left-arrow-container d-flex align-items-center">
+            <span><i class="fas fa-arrow-left"></i></span>
+          </div>
+        </a>
+        <div class="details-container d-flex justify-content-center">
+          <a class="navbar-brand" href="javascript:void(0)">New</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</nav>
+<% elsif controller_name == 'foods' && action_name == 'new' %>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <% if user_signed_in? %>
+      <div class="row w-100">
+        <a class="a-class" href="<%= group_path(params[:group_id]) %>">
+          <div class="left-arrow-container d-flex align-items-center">
+            <span><i class="fas fa-arrow-left"></i></span>
+          </div>
+        </a>
+        <div class="details-container d-flex justify-content-center">
+          <a class="navbar-brand" href="javascript:void(0)">New</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</nav>
+<% end %>
+
 
