@@ -1,15 +1,13 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show]
+  before_action :find_group, only: [:show,:edit,:update, :destroy]
   def index
     @groups = Group.all
     date
-    # sum_of_amount_for_group
   end
   def new
     @group = Group.new
   end
   def show
-    @group = Group.find(params[:id])
     @foods = @group.foods
     date
     sum_of_amount_for_group
@@ -22,7 +20,28 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to groups_url, notice: "Your restaurant has been added successfully"
     else
-      render :new, alert: "Sorry!! some error occured"
+      redirect_to request.referer, alert: "Sorry!! some error occured"
+    end
+  end
+
+  def destroy
+    # authorize! :destroy, @group
+    if @group.destroy
+      redirect_to groups_path, notice: 'Restaurant deleted'
+    else
+      puts @group.errors.full_messages
+      redirect_to request.referer, notice: 'Restaurant could not be deleted'
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @group.update(group_params)
+      redirect_to group_path, notice: 'Restaurant updated'
+    else
+      render :edit, alert: 'Could not update Restaurant'
     end
   end
   
@@ -32,7 +51,7 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name, :icon)
   end
 
-  def set_group
+  def find_group
     @group = Group.find(params[:id])
   end
 

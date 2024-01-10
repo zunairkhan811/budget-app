@@ -12,7 +12,7 @@
                     <div class="restaurant-title-container">
                         <h5 class="card-title"><%= @group.name %></h5>
                         
-                        <p><%=@sum_of_amount%></p>
+                        <p>$<%=@sum_of_amount%></p>
                         
                     </div>
                 <p class="card-text"><small class="text-body-secondary"><%= @updated_time.strftime('%e %B %Y') %></small></p>
@@ -20,6 +20,8 @@
             </div>
             </div>
         </div>
+        <%= link_to 'Delete', group_path, class: "btn btn-danger mb-2",method: :delete, data: {confirm: "Are you sure you want to delete Restaurant and its food items"} %>
+        <%= link_to 'Edit', edit_group_path, class: "btn btn-info mb-2" %>
 
         <% @group.foods.each do |food|%>
             <div class="card mb-2">
@@ -28,7 +30,6 @@
                 <p class="card-text"><small class="text-body-secondary"><%= @updated_time.strftime('%e %B %Y') %></small></p>
                 <p>$<%= food.amount %></p>
                 </div>
-                
             </div>
         <% end %>
 </div>
