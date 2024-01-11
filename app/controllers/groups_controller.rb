@@ -37,6 +37,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    authorize! :edit, @group
   end
 
   def update

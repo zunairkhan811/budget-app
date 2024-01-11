@@ -52,6 +52,25 @@
 </nav>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+<% elsif controller_name == 'groups' && action_name == 'edit' %>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <% if user_signed_in? %>
+      <div class="row w-100">
+        <a class="a-class" href="<%= group_path(params[:id]) %>">
+          <div class="left-arrow-container d-flex align-items-center">
+            <span><i class="fas fa-arrow-left"></i></span>
+          </div>
+        </a>
+        <div class="details-container d-flex justify-content-center">
+          <a class="navbar-brand" href="javascript:void(0)">Update</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</nav>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 <% elsif controller_name == 'groups' && action_name == 'new' %>
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
