@@ -9,6 +9,7 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
   def show
+    authorize! :read, @group
     @foods = @group.foods
     date
     sum_of_amount_for_group
@@ -26,7 +27,7 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-    # authorize! :destroy, @group
+    authorize! :destroy, @group
     if @group.destroy
       redirect_to groups_path, notice: 'Restaurant deleted'
     else
@@ -39,6 +40,7 @@ class GroupsController < ApplicationController
   end
 
   def update
+    authorize! :update, @group
     if @group.update(group_params)
       redirect_to group_path, notice: 'Restaurant updated'
     else

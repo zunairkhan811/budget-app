@@ -9,7 +9,6 @@
         <div class="row justify-content-center">
           <div class="col-lg-5">
           <%= form_with model: @food, url: group_foods_path do |form| %>
-          <!-- Other food fields -->
               <div class="form-group">
                 <%= form.label "Food Name(*)", class: "lead mb-2" %>
                 <%= form.text_field :name, class: "form-control form-control-lg rounded-0" %>
@@ -26,7 +25,7 @@
               </div>
               <div class="form-group">
                 <%= form.label "Select Restaurant(*)", class: "lead mb-2" %>
-                <%= form.select :group_id, options_for_select(Group.all.map { |g| [g.name, g.id] }, @food.group_id), { prompt: "Select" }, class: "form-select form-select-lg rounded-0",style: "max-width: 80%", size: 1 %>
+                <%= form.select :group_id, options_for_select(current_user.groups.all.map { |g| [g.name, g.id] }, @food.group_id), { prompt: "Select" }, class: "form-select form-select-lg rounded-0",style: "max-width: 80%", size: 1 %>
                 <% @food.errors.full_messages_for(:group_id).each do |message| %>
                   <p class="text-danger"><%= message %></p>
                 <% end %>
@@ -34,9 +33,6 @@
         
               <div class="form-group text-center mt-3">
                 <%= form.submit "Add Food", class: "btn btn-primary btn-sm" %>
-              </div>
-              <div class="form-group text-center mt-3">
-                <%= link_to "Back to Restaurants", group_path(params[:group_id]), class: "btn btn-danger btn-md" %>
               </div>
             <% end %>
           </div>
