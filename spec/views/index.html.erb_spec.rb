@@ -3,7 +3,8 @@ require 'rails_helper'
 
 RSpec.describe 'Groups Index Page', type: :system do
   let(:user1) do
-    user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password', password_confirmation: 'password')
+    User.create(name: 'John Doe', email: 'john@example.com', password: 'password',
+                password_confirmation: 'password')
   end
 
   let!(:group1) do
@@ -28,7 +29,8 @@ RSpec.describe 'Groups Index Page', type: :system do
   end
 
   it 'does not display details of groups that the user cannot read' do
-    other_user = User.create(name: 'Other User', email: 'other@example.com', password: 'password', password_confirmation: 'password')
+    other_user = User.create(name: 'Other User', email: 'other@example.com', password: 'password',
+                             password_confirmation: 'password')
     other_group = Group.create(name: 'Other Group', icon: 'other_icon_url', user: other_user)
 
     visit groups_path

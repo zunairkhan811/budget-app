@@ -7,7 +7,7 @@ RSpec.describe Group, type: :model do
     described_class.new(
       name: 'Delicious Recipe',
       icon: 'icon_url_here',
-      user: user
+      user:
     )
   end
 

@@ -1,3 +1,3 @@
 class ApplicationController < ActionController::Base
-    include CanCan::ControllerAdditions
+  include CanCan::ControllerAdditions
 end

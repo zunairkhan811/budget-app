@@ -2,14 +2,14 @@ require 'rails_helper'
 
 RSpec.describe Food, type: :model do
   let(:user) { User.create(name: 'John', email: 'john@example.com') }
-  let(:group) { Group.create(name: 'Delicious Group', icon: 'group_icon_url', user: user) }
+  let(:group) { Group.create(name: 'Delicious Group', icon: 'group_icon_url', user:) }
 
   subject do
     described_class.new(
       name: 'Tasty Food',
       amount: 20.5,
       author: user,
-      group_id: group.id 
+      group_id: group.id
     )
   end
 
@@ -44,7 +44,7 @@ RSpec.describe Food, type: :model do
       expect(association.class_name).to eq 'User'
     end
 
-    it 'has many groups' do 
+    it 'has many groups' do
       association = described_class.reflect_on_association(:groups)
       expect(association.macro).to eq :has_many
     end

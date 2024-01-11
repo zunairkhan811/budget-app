@@ -3,7 +3,7 @@ class FoodsController < ApplicationController
   def index
     @foods = Food.all
   end
-  
+
   def new
     puts "Group ID from params: #{params[:group_id]}"
     @group = Group.find(params[:group_id])
@@ -24,7 +24,6 @@ class FoodsController < ApplicationController
   private
 
   def food_params
-    params.require(:food).permit(:name, :amount,:group_id)
+    params.require(:food).permit(:name, :amount, :group_id)
   end
-
 end
