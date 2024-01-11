@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'splash/index'
   get 'foods/index'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -11,6 +12,6 @@ Rails.application.routes.draw do
   resources :groups do
     resources :foods
   end
-  root "groups#index"
+  root "splash#index"
   get "up" => "rails/health#show", as: :rails_health_check
 end
