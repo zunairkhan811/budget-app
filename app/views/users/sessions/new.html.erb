@@ -1,31 +1,23 @@
-<div class="col-lg-6 mx-auto">
-  <div class="card">
-    <div class="card-header">
-      <h2 class="text-center" >Sign In</h2>
-    </div>
-    <div class="card-body">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-group">
-          <%= f.label :email, class: "form-label mb-2" %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-lg' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :password, class: "form-label my-2" %>
-          <%= f.password_field :password, autocomplete: "current-password", class: 'form-control form-control-lg' %>
-        </div>
-        <% if devise_mapping.rememberable? %>
-            <div class="form-check mt-3">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-              <label class="form-check-label" for="flexCheckChecked">
-                Remember me
-              </label>
-            </div>
-        <% end %>
-        <div class="form-group">
-          <%= f.submit "Log in", class: 'btn btn-primary' %>
-        </div>
-      <% end %>
-      <%= render "users/shared/links" %>
-    </div>
+<div class="px-0">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <div class="signup-navbar px-0 navbar navbar-expand-lg w-100">
+    <a href="<%= splash_index_path %>"><i class="fas fa-arrow-left"></i></a>
+    <p>Login In</p>
+    <%= f.submit "LogIn", class: "signup-submit btn btn-primary" %>
   </div>
+  <%= render "users/shared/error_messages", resource: resource %>
+  <div class="px-2">
+  
+    <%= f.email_field :email, autofocus: true,placeholder:"Email", autocomplete: "email", class: "form-control form-control-lg mt-2 mb-1" %>
+  
+    <%= f.password_field :password,placeholder:"Password", autocomplete: "current-password", class: "form-control form-control-lg mb-1" %>
+
+    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+      <%= link_to "Forgot password?", new_password_path(resource_name), class: "forgot-link mt-2 d-flex justify-content-center" %><br />
+    <% end %>
+  
+  </div>
+  
+  <% end %>
 </div>

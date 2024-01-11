@@ -184,13 +184,13 @@ body{
   
   .splash-container{
     width: 100%;
-    height: 60vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .splash-container h1{
+  .splash-container h2{
     font-family: 'Lobster', sans-serif;
     font-size: 3.5em;
     font-weight: bold;
@@ -200,6 +200,7 @@ body{
   .login-link{
     width: 100% !important; 
     background-color: var(--main-color) !important;
+    color: var(--white-color) !important;
     border-radius: 4px !important;
     border: 0.5px solid #dee2e6  !important; 
     margin-bottom: 2px !important;
@@ -209,4 +210,31 @@ body{
     width: 100% !important;
     border-radius: 4px !important;
     border: 1px solid #dee2e6 !important;
+  }
+
+  .signup-navbar{
+    background-color: var(--main-color);
+    display: flex !important;
+    justify-content: space-evenly !important;
+    align-items: center;
+  }
+
+  .signup-navbar a{
+    color: var(--white-color) !important;
+    font-size: 22px !important;
+    font-weight: lighter;
+    margin-left: 2px !important;
+    margin-right: 24px !important;
+  }
+
+  .signup-navbar p{
+    color: var(--white-color);
+    font-weight:normal !important;
+    margin-bottom: 0 !important;
+    font-size: 20px;
+  }
+
+  .forgot-link{
+    color: #747e88 !important;
+    font-size: 20px !important;
   }

@@ -6,8 +6,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   resources :users
-  # resources :groups
-  # resources :foods
+  resources :splash
 
   resources :groups do
     resources :foods
