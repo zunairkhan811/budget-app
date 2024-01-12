@@ -32,6 +32,8 @@
 
 ### Project Video Link: <a href="#" name="project-video">Click Here</a>
 
+### Deployed Link: <a href="https://budget-app-1wmp.onrender.com/" name="live-link">Click Here</a>
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
