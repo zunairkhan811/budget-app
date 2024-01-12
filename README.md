@@ -157,7 +157,6 @@ I would like to give credit to the author of this [Design](https://www.behance.n
 
   - [In this project, a user can keep record of money spent on food items and can keep record of list of restaurants he visited and number of food items he ate and can know how much total money is spent on any restaurant he visited. ]
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📝 License <a name="license"></a>
