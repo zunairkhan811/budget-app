@@ -112,6 +112,8 @@ GEM
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
+    esbuild-rails (0.1.4)
+      rails (>= 6.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -302,6 +304,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.9)
+  esbuild-rails (~> 0.1.4)
   importmap-rails
   jbuilder
   pg (~> 1.1)

@@ -70,3 +70,5 @@ gem 'cancancan'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'devise', '~> 4.9'
+
+gem 'esbuild-rails', '~> 0.1.4'
