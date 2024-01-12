@@ -21,8 +21,8 @@
 }
 
 @font-face {
-  font-family: 'Proxima Nova-Bold';
-  src: url('../fonts/proxima_nova_bold.ttf') format('ttf');
+  font-family: 'Proxima Nova';
+  src: url('../fonts/Proxima-Nova-Font.otf') format('opentype');
 }
 
 * {
@@ -30,7 +30,7 @@
 }
 
 body {
-  font-family: 'Proxima Nova-Bold', sans-serif !important;
+  font-family: 'Proxima Nova', sans-serif !important;
   background-color: whitesmoke !important;
 }
 
@@ -39,7 +39,7 @@ body {
 }
 
 .navbar-brand {
-  font-family: 'Proxima Nova-Bold', sans-serif !important;
+  font-family: 'Proxima Nova', sans-serif !important;
   color: var(--white-color) !important;
   margin-left: 60px !important;
   font-size: 25px !important;
