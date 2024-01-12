@@ -63,7 +63,7 @@ Rails.application.configure do
   # information to avoid inadvertent exposure of personally identifiable information (PII). If you
   # want to log everything, set the level to "debug".
   config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
-
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? || ENV['RENDER'].present?
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
