@@ -23,7 +23,7 @@
         <%= link_to 'Delete', group_path, class: "btn btn-danger mb-2",method: :delete, data: {confirm: "Are you sure you want to delete Restaurant and its food items"} %>
         <%= link_to 'Edit', edit_group_path, class: "btn btn-info mb-2" %>
     
-        <% @group.foods.each do |food|%>
+        <% @foods.each do |food|%>
             <div class="card mb-2">
                 <div class="food-container card-body">
                 <p><%= food.name %></p>

@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_group, only: %i[show edit update destroy]
   def index
-    @groups = Group.all
+    @groups = Group.all.order(created_at: :desc)
     date
   end
 
@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
 
   def show
     authorize! :read, @group
-    @foods = @group.foods
+    @foods = @group.foods.order(created_at: :desc)
     date
     sum_of_amount_for_group
   end
