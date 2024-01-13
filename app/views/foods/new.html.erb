@@ -1,0 +1,43 @@
+<div class="col-lg-12">
+    <div class="card mt-1 mb-5">
+        <div class="card-body">
+            <h2 class="text-center">Add new Food</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+          <%= form_with model: @food, url: group_foods_path do |form| %>
+              <div class="form-group">
+                <%= form.label "Food Name(*)", class: "lead mb-2" %>
+                <%= form.text_field :name, class: "form-control form-control-lg rounded-0" %>
+                <% @food.errors.full_messages_for(:name).each do |message|  %>
+                  <p class="text-danger"><%= message %></p>
+                <% end %>
+              </div>
+              <div class="form-group">
+                <%= form.label "Food Price$(*)", class: "lead mb-2" %>
+                <%= form.text_field :amount, class: "form-control form-control-lg rounded-0" %>
+                <% @food.errors.full_messages_for(:amount).each do |message|  %>
+                  <p class="text-danger"><%= message %></p>
+                <% end %>
+              </div>
+              <div class="form-group">
+                <%= form.label "Select Restaurant(*)", class: "lead mb-2" %>
+                <%= form.select :group_id, options_for_select(current_user.groups.all.map { |g| [g.name, g.id] }, @food.group_id), { prompt: "Select" }, class: "form-select form-select-lg rounded-0",style: "max-width: 80%", size: 1 %>
+                <% @food.errors.full_messages_for(:group_id).each do |message| %>
+                  <p class="text-danger"><%= message %></p>
+                <% end %>
+              </div>
+        
+              <div class="form-group text-center mt-3">
+                <%= form.submit "Add Food", class: "btn btn-primary btn-sm" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+    </div>
+      
+    
+</div>

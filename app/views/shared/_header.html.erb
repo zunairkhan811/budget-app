@@ -1,0 +1,114 @@
+<% if controller_name == 'groups' && action_name == 'index' %>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <% if user_signed_in? %>
+      <div class="row w-100">
+        <div class="col d-flex justify-content-center">
+          <a class="navbar-brand" href="javascript:void(0)">Restaurants</a>
+        </div>
+        <div class="col-auto d-flex align-items-center">
+          <a href="/users/sign_out" class="nav-icon" data-method="delete">
+            <i class="fa fa-power-off" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="row w-100 mt-4">
+        <div class="most-recent col-lg-12 d-flex flex-column align-items-center">
+          <p>Most Recent</p>
+          <span class="dot"></span>
+        </div>   
+      </div>
+    <% else %>
+    <div class="row w-100">
+      <div class="col d-flex justify-content-center">
+        <a class="navbar-brand" href="javascript:void(0)">Restaurants</a>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</nav>
+<div class="alert alert-light d-flex justify-content-between" role="alert">
+  <p class="mb-0 gift-heading">Gift Credit</p>
+  <p class="mb-0 gift-amount">$45.00</p>
+</div>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<% elsif controller_name == 'groups' && action_name == 'show' %>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <% if user_signed_in? %>
+      <div class="row w-100">
+        <a class="a-class" href="<%= groups_path %>">
+          <div class="left-arrow-container d-flex align-items-center">
+            <span><i class="fas fa-arrow-left"></i></span>
+          </div>
+        </a>
+        <div class="details-container d-flex justify-content-center">
+          <a class="navbar-brand" href="javascript:void(0)">Details</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</nav>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<% elsif controller_name == 'groups' && action_name == 'edit' %>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <% if user_signed_in? %>
+      <div class="row w-100">
+        <a class="a-class" href="<%= group_path(params[:id]) %>">
+          <div class="left-arrow-container d-flex align-items-center">
+            <span><i class="fas fa-arrow-left"></i></span>
+          </div>
+        </a>
+        <div class="details-container d-flex justify-content-center">
+          <a class="navbar-brand" href="javascript:void(0)">Update</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</nav>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<% elsif controller_name == 'groups' && action_name == 'new' %>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <% if user_signed_in? %>
+      <div class="row w-100">
+        <a class="a-class" href="<%= groups_path %>">
+          <div class="left-arrow-container d-flex align-items-center">
+            <span><i class="fas fa-arrow-left"></i></span>
+          </div>
+        </a>
+        <div class="details-container d-flex justify-content-center">
+          <a class="navbar-brand" href="javascript:void(0)">New</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</nav>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<% elsif controller_name == 'foods' && action_name == 'new' %>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <% if user_signed_in? %>
+      <div class="row w-100">
+        <a class="a-class" href="<%= group_path(params[:group_id]) %>">
+          <div class="left-arrow-container d-flex align-items-center">
+            <span><i class="fas fa-arrow-left"></i></span>
+          </div>
+        </a>
+        <div class="details-container d-flex justify-content-center">
+          <a class="navbar-brand" href="javascript:void(0)">New</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</nav>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<% end %>
+
+
