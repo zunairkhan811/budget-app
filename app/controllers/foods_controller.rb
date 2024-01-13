@@ -1,8 +1,5 @@
 class FoodsController < ApplicationController
   before_action :authenticate_user!
-  def index
-    @foods = Food.all
-  end
 
   def new
     puts "Group ID from params: #{params[:group_id]}"

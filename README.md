@@ -30,7 +30,9 @@
 
 **[Budget App]** is based on Ruby Language and Rails framework.
 
-### Project Video Link: <a href="#" name="project-video">Click Here</a>
+### Project Video Link: <a href="https://www.loom.com/share/80df6205ab344ab9981ed2f0c38d16d7?sid=9c357b74-fc78-4b98-9daf-8d0954203fc2" name="project-video">Click Here</a>
+
+### Deployed Link: <a href="https://budget-app-1wmp.onrender.com/" name="live-link">Click Here</a>
 
 ## 🛠 Built With <a name="built-with"></a>
 
