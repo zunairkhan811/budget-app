@@ -2,7 +2,8 @@
 <a name="readme-top"></a>
 
   <h3><b>**Budget App**</b></h3>
-  ![GitHub Logo](https://github.com/github.png)
+  
+  ![GitHub Logo](https://github.com/zunairkhan811/budget-app/blob/development/app/assets/images/budgetapplogo.png?raw=true)
 
 </div>
 
